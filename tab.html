@@ -39,14 +39,14 @@ window.onload = function(){
 				aLiOl[i].className = '';
 			}
 			aLiOl[this.index].className = 'active';
-			if( iNow < this.index ){
-				aLiUl[this.index].style.left = oneWidth + 'px';
-				startMove( aLiUl[iNow], { left:-oneWidth} );
+			if( iNow < this.index ){		//被点击的图片索引大于当前图片索引
+				aLiUl[this.index].style.left = oneWidth + 'px';		//设定被点击图片在右侧
+				startMove( aLiUl[iNow], { left:-oneWidth} );		//移动当前图片至左侧
 			}else if( iNow > this.index ){
 				aLiUl[this.index].style.left = -oneWidth + 'px';
 				startMove( aLiUl[iNow], { left:oneWidth} );
 			}
-			startMove( aLiUl[this.index], { left:0 } );
+			startMove( aLiUl[this.index], { left:0 } );		//移动被点击图片至中央
 			iNow = this.index;
 		}
 	}
